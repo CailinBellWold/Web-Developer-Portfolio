@@ -1,0 +1,195 @@
+
+:root {
+  --c--black: #000000;
+  --c-dblue: #14213D;
+  --c-yellow: #FCA311;
+  --c-red: #d62828;
+  --c-lgrey: #E5E5E5;
+  --c-white: #ffffff;
+    /* You can use it with any value that is repeated throughout the sheet */
+  --border-radius: 5px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*TO DO:
+Set font family
+Center/format Contact section
+Add a photo of me (ugh)
+Fix Responsiveness, set flex and add media-queries*/
+
+/*Flexbox Container*/
+body {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--c-dblue);
+}
+
+/*Flexbox Container Inside of Body*/
+.header {
+  /*background-color: var(--c-dblue);*/
+  color: var(--c-red);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-align: baseline;
+  align-items: baseline;
+  width: 100%;
+  padding: 2% 5% 2% 2%;
+}
+
+/*Item inside Header Inside Body*/
+h1 {
+  font-size: 200%;
+  font-family: 'Berkshire Swash', cursive;
+  margin: 0 0em;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*Item inside Header Inside Body*/
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 250px;
+  margin: 5% 2%;
+}
+
+nav a {
+  color: var(--c-red);
+  text-decoration: none;
+  text-align: center;
+  padding: 0 20px;
+}
+
+nav a:hover {
+  color: var(--c-yellow);
+  font-size: 110%;
+  text-shadow: 1px 1px 6px var(--c--black);
+}
+
+.main {
+  margin: 1% 5%;
+}
+
+h2 {
+color: var(--c-yellow)
+}
+
+.main p {
+  line-height: 25px;
+  margin-bottom: 5px; 
+  color: var(--c-white); 
+}
+
+.projects {
+  /*background-color: var(--c-lgrey);*/
+  color: var(--c-dblue);
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  width: 100%;
+  padding: 2% 5% 2% 5%;
+}
+
+.projects h2 {
+  min-width: 100px;
+}
+
+.project-container {
+/*border: solid 5px red;*/
+}
+
+.project-container a {
+  overflow: hidden;
+  white-space: nowrap;
+  object-fit: scale-down;
+  opacity: 0.8;
+  margin: 5px;
+}
+
+.project-container a:hover {
+filter: drop-shadow(5px 3px 10px var(--c--black));
+opacity: 1;
+}
+
+.tile {
+  /*border: solid 5px orange;*/
+  position: relative;
+  object-fit: contain;
+  flex: 0 1 auto;
+}
+
+.tile p {
+  position: absolute;
+  bottom: 20px;
+  left: 0px;
+  background-color: var(--c-yellow);
+  color: var(--c-dblue);
+  padding: .5em 1em;
+  border-radius: 0 5px 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.tile p span {
+  font-size: 70%;
+}
+
+.tile .preview-lg {
+    height: 200px;
+    width: 630px;
+}
+
+.tile .preview-sm {
+    height: 200px;
+    width: 200px;
+}
+
+img {
+  border: .5px solid var(--c-white);
+  border-radius: 2px;
+  /*border: solid 5px yellow;*/
+  /*filter: drop-shadow(5px 3px 10px var(--c-yellow));*/
+}
+
+.footer {
+  background-color: var(--c-dblue);
+  color: var(--c-white);
+  text-align: center;
+  width: 100%;
+  padding: 2% 5% 2% 2%;
+}
+
+/* Style all font awesome icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-linkedin {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-github {
+  background: #55ACEE;
+  color: white;
+}
