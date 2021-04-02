@@ -2,6 +2,7 @@
 :root {
   --c--black: #000000;
   --c-dblue: #14213D;
+  --c-lblue: #566a9c;
   --c-yellow: #FCA311;
   --c-red: #d62828;
   --c-lgrey: #E5E5E5;
@@ -26,11 +27,15 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--c-dblue);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: .5px;
+  line-height: 1.6em;
 }
 
 /*Flexbox Container Inside of Body*/
 .header {
-  /*background-color: var(--c-dblue);*/
   color: var(--c-red);
   text-align: left;
   display: flex;
@@ -44,11 +49,15 @@ body {
 /*Item inside Header Inside Body*/
 h1 {
   font-size: 200%;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'EB Garamond', serif;
+  letter-spacing: .05em;
   margin: 0 0em;
   white-space: nowrap;
   overflow: hidden;
+  font-variant: small-caps;
 }
+
+
 
 /*Item inside Header Inside Body*/
 nav ul {
@@ -74,10 +83,18 @@ nav a:hover {
 
 .main {
   margin: 1% 5%;
+  display: flex;
+  flex-direction: row;
 }
 
 h2 {
-color: var(--c-yellow)
+color: var(--c-yellow);
+font-size: 1.5em;
+}
+
+
+.main h2 {
+  min-width: 20%;
 }
 
 .main p {
@@ -86,6 +103,14 @@ color: var(--c-yellow)
   color: var(--c-white); 
 }
 
+.main img {
+  overflow: hidden;
+  white-space: nowrap;
+  object-fit: scale-down;
+  margin: 5px;
+  object-fit: contain;
+
+}
 .projects {
   /*background-color: var(--c-lgrey);*/
   color: var(--c-dblue);
@@ -98,7 +123,7 @@ color: var(--c-yellow)
 }
 
 .projects h2 {
-  min-width: 100px;
+  min-width: 20%;
 }
 
 .project-container {
@@ -135,6 +160,8 @@ opacity: 1;
   border-radius: 0 5px 5px 0;
   white-space: nowrap;
   overflow: hidden;
+/*font-family: 'IBM Plex Sans', sans-serif;*/
+font-family: 'Poppins', sans-serif;
 }
 
 .tile p span {
@@ -162,34 +189,53 @@ img {
   background-color: var(--c-dblue);
   color: var(--c-white);
   text-align: center;
-  width: 100%;
+ 
   padding: 2% 5% 2% 2%;
+}
+
+.contact-container {
+  display: inline-block;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+     border-top: solid var(--c-lblue) .15px;
+  border-bottom: solid var(--c-lblue) .15px;
+  width: 80%;
 }
 
 /* Style all font awesome icons */
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
+  margin: 2%;
+  font-size: 16em;
+  width: 4%;
   text-align: center;
   text-decoration: none;
 }
 
-/* Add a hover effect if you want */
 .fa:hover {
-  opacity: 0.7;
+  opacity: .5;
 }
 
-/* Set a specific color for each brand */
-
-/* Facebook */
+/* LinkedIn */
 .fa-linkedin {
-  background: #3B5998;
-  color: white;
-}
+  position: relative;
+  color: var(--c-white);
+  }
 
-/* Twitter */
+
+/* GitHub */
 .fa-github {
-  background: #55ACEE;
-  color: white;
-}
+  position: relative;
+  color: var(--c-white);
+  }
+
+  /* Email */
+  .fa-envelope {
+    position: relative;
+    color: var(--c-white);
+  }
+
+  .footer p {
+    color: var(--c-lblue);
+    line-height: 25px;
+  }
