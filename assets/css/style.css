@@ -4,6 +4,7 @@
   --c-lblue: #566a9c;
   --c-yellow: #FCA311;
   --c-red: #d62828;
+  --c-red2: #ec4c4c;
   --c-lgrey: #E5E5E5;
   --c-white: #ffffff;
 }
@@ -35,63 +36,80 @@ body {
 /*Flexbox Container1 Inside of Body*/
 .header {
   color: var(--c-red);
-  text-align: left;
-  display: flex;
-  justify-content: space-between;
-  -webkit-box-align: baseline;
-  align-items: baseline;
+  display: inline-block;
+  text-align: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: left;
+  border-bottom: solid var(--c-lblue) .15px;
   width: 100%;
-  padding: 2% 5% 2% 2%;
+  padding: 2% 0% 2% 0%;
+}
+
+header img {
+  border: none;
 }
 
 /*Item inside Header Inside Body*/
 h1 {
-  font-size: 250%;
-  font-family: 'EB Garamond', serif;
-  letter-spacing: .05em;
-  padding: 1em 0 2em 0;
+  font-size: x-large;
+  color: var(--c-yellow);
+  letter-spacing: .08em;
+  padding: 1em 0 1em 0;
+  font-family: 'Cinzel', serif;
   white-space: nowrap;
   overflow: hidden;
-  font-variant: small-caps;
+  text-transform: uppercase;
+  min-width: 33%;
 }
+
+/*h1 span {
+  color: var(--c-lblue);
+  font-size: smaller;
+}*/
 
 h2 {
   color: var(--c-yellow);
   font-size: 1.5em;
+  min-width: 16.5%;
 }
 
 /*Item inside Header Inside Body*/
 nav ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  min-width: 250px;
-  margin: 5% 2%;
-  
+  justify-content: flex-end;
+  min-width: 33%;
 }
 
 nav a {
   color: var(--c-red);
   text-decoration: none;
   text-align: center;
-  padding: 0 20px;
+  padding: 0 7px;
+  border-radius: 5px;
 }
 
 nav a:hover {
-  color: var(--c-yellow);
-  font-size: 110%;
-  text-shadow: 1px 1px 6px var(--c--black);
+  background-color: var(--c-red2);
+  color: var(--c-white);
+  
+  /*font-size: 110%;*/
+  text-transform: uppercase;
+  /*text-shadow: 1px 1px 6px var(--c--black);*/
 }
 
 /*Flexbox Container2 Inside of Body*/
 .about {
   display: flex;
   flex-direction: row;
-  margin: 1% 5%;
+  width: 100%;
+  /*margin: 0 5%;*/
+  padding: 2% 5% 2% 5%;
 }
 
 .about h2 {
-  min-width: 20%;
+  min-width: 16%;
 }
 
 .about p {
@@ -117,16 +135,18 @@ nav a:hover {
 /*Flexbox Container3 Inside of Body*/
 .projects {
   display: flex;
+  justify-content: space-between;
+  width: 100%;
   color: var(--c-dblue);
   text-align: left;
-  justify-content: space-between;
+  
   align-items: left;
-  width: 100%;
+  
   padding: 2% 5% 2% 5%;
 }
 
 .projects h2 {
-  min-width: 20%;
+  min-width: 16%;
 }
 
 .project-container {
@@ -142,7 +162,7 @@ nav a:hover {
 }
 
 .project-container a:hover {
-  filter: drop-shadow(5px 3px 10px var(--c-lblue));
+  filter: drop-shadow(5px 3px 10px var(--c-red2));
   opacity: 1;
 }
 
@@ -202,9 +222,11 @@ img {
   text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
+  align-items: left;
   border-top: solid var(--c-lblue) .15px;
   border-bottom: solid var(--c-lblue) .15px;
   width: 100%;
+  padding: 2% 5% 2% 5%;
 }
 
 /* Font awesome icons */
@@ -239,6 +261,7 @@ img {
 }
 
 .footer p {
-  color: var(--c-lblue);
-  line-height: 25px;
+  margin-top: 10px;
+  color: var(--c-red2);
+  line-height: 20px;
 }
