@@ -1,4 +1,3 @@
-
 :root {
   --c--black: #000000;
   --c-dblue: #14213D;
@@ -7,8 +6,6 @@
   --c-red: #d62828;
   --c-lgrey: #E5E5E5;
   --c-white: #ffffff;
-    /* You can use it with any value that is repeated throughout the sheet */
-  --border-radius: 5px;
 }
 
 html {
@@ -18,7 +15,7 @@ html {
 /*TO DO:
 Set font family
 Center/format Contact section
-Add a photo of me (ugh)
+Write About Me
 Fix Responsiveness, set flex and add media-queries*/
 
 /*Flexbox Container*/
@@ -28,13 +25,14 @@ body {
   flex-direction: column;
   background-color: var(--c-dblue);
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;
+  font-weight: 400;/*QUESTION: Why, when I change the font-weight, does the picture size in main/section 1 explode?*/
   font-style: normal;
   letter-spacing: .5px;
   line-height: 1.6em;
+  margin: 0 16.5%;
 }
 
-/*Flexbox Container Inside of Body*/
+/*Flexbox Container1 Inside of Body*/
 .header {
   color: var(--c-red);
   text-align: left;
@@ -48,16 +46,19 @@ body {
 
 /*Item inside Header Inside Body*/
 h1 {
-  font-size: 200%;
+  font-size: 250%;
   font-family: 'EB Garamond', serif;
   letter-spacing: .05em;
-  margin: 0 0em;
+  padding: 1em 0 2em 0;
   white-space: nowrap;
   overflow: hidden;
   font-variant: small-caps;
 }
 
-
+h2 {
+  color: var(--c-yellow);
+  font-size: 1.5em;
+}
 
 /*Item inside Header Inside Body*/
 nav ul {
@@ -66,6 +67,7 @@ nav ul {
   justify-content: space-between;
   min-width: 250px;
   margin: 5% 2%;
+  
 }
 
 nav a {
@@ -81,41 +83,42 @@ nav a:hover {
   text-shadow: 1px 1px 6px var(--c--black);
 }
 
-.main {
-  margin: 1% 5%;
+/*Flexbox Container2 Inside of Body*/
+.about {
   display: flex;
   flex-direction: row;
+  margin: 1% 5%;
 }
 
-h2 {
-color: var(--c-yellow);
-font-size: 1.5em;
-}
-
-
-.main h2 {
+.about h2 {
   min-width: 20%;
 }
 
-.main p {
+.about p {
+  flex-basis: auto;
   line-height: 25px;
   margin-bottom: 5px; 
-  color: var(--c-white); 
+  color: var(--c-white);
+  max-width: 780px;
+  min-width: 780px;
 }
 
-.main img {
+.about img {
+  flex-basis: auto;
+  float: right;
+  margin: 7px 0 5px 5px;
   overflow: hidden;
   white-space: nowrap;
-  object-fit: scale-down;
-  margin: 5px;
   object-fit: contain;
-
+  max-width: 200px;
+  border-radius: 2px;
 }
+
+/*Flexbox Container3 Inside of Body*/
 .projects {
-  /*background-color: var(--c-lgrey);*/
+  display: flex;
   color: var(--c-dblue);
   text-align: left;
-  display: flex;
   justify-content: space-between;
   align-items: left;
   width: 100%;
@@ -139,10 +142,11 @@ font-size: 1.5em;
 }
 
 .project-container a:hover {
-filter: drop-shadow(5px 3px 10px var(--c--black));
-opacity: 1;
+  filter: drop-shadow(5px 3px 10px var(--c-lblue));
+  opacity: 1;
 }
 
+/*QUESTION: Should I be using background images instead of creating a project container, populating it with tiles (that each have an anchor tag) and adding p to each to overlay the text?*/
 .tile {
   /*border: solid 5px orange;*/
   position: relative;
@@ -160,8 +164,7 @@ opacity: 1;
   border-radius: 0 5px 5px 0;
   white-space: nowrap;
   overflow: hidden;
-/*font-family: 'IBM Plex Sans', sans-serif;*/
-font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .tile p span {
@@ -169,13 +172,14 @@ font-family: 'Poppins', sans-serif;
 }
 
 .tile .preview-lg {
-    height: 200px;
-    width: 630px;
+  height: 350px;
+  width: 780px;
 }
 
 .tile .preview-sm {
-    height: 200px;
-    width: 200px;
+  height: 250px;
+  width: 250px;
+  margin-top: 5px;
 }
 
 img {
@@ -189,8 +193,8 @@ img {
   background-color: var(--c-dblue);
   color: var(--c-white);
   text-align: center;
- 
-  padding: 2% 5% 2% 2%;
+  padding: 2% 0 2% 0;
+  width: 100%;
 }
 
 .contact-container {
@@ -198,12 +202,12 @@ img {
   text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
-     border-top: solid var(--c-lblue) .15px;
+  border-top: solid var(--c-lblue) .15px;
   border-bottom: solid var(--c-lblue) .15px;
-  width: 80%;
+  width: 100%;
 }
 
-/* Style all font awesome icons */
+/* Font awesome icons */
 .fa {
   margin: 2%;
   font-size: 16em;
@@ -220,22 +224,21 @@ img {
 .fa-linkedin {
   position: relative;
   color: var(--c-white);
-  }
-
+}
 
 /* GitHub */
 .fa-github {
   position: relative;
   color: var(--c-white);
-  }
+}
 
-  /* Email */
-  .fa-envelope {
-    position: relative;
-    color: var(--c-white);
-  }
+/* Email */
+.fa-envelope {
+  position: relative;
+  color: var(--c-white);
+}
 
-  .footer p {
-    color: var(--c-lblue);
-    line-height: 25px;
-  }
+.footer p {
+  color: var(--c-lblue);
+  line-height: 25px;
+}
