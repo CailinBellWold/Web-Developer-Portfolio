@@ -14,10 +14,14 @@ html {
 }
 
 /*TO DO:
-Set font family
+Smoosh Logo
 Center/format Contact section
 Write About Me
-Fix Responsiveness, set flex and add media-queries*/
+Fix Responsiveness, set flex and add media-queries
+Add credits to images
+Write ReadMe
+Add Alt Tags
+*/
 
 /*Flexbox Container*/
 body {
@@ -43,7 +47,7 @@ body {
   align-items: left;
   border-bottom: solid var(--c-lblue) .15px;
   width: 100%;
-  padding: 2% 0% 2% 0%;
+  padding: 0 0% 0% 0%;
 }
 
 header img {
@@ -93,7 +97,8 @@ nav a {
 nav a:hover {
   background-color: var(--c-red2);
   color: var(--c-white);
-  
+  border: solid .25px var(--c-yellow);
+  filter: drop-shadow(3px 3px 10px var(--c-yellow));
   /*font-size: 110%;*/
   text-transform: uppercase;
   /*text-shadow: 1px 1px 6px var(--c--black);*/
@@ -139,9 +144,7 @@ nav a:hover {
   width: 100%;
   color: var(--c-dblue);
   text-align: left;
-  
   align-items: left;
-  
   padding: 2% 5% 2% 5%;
 }
 
@@ -210,23 +213,24 @@ img {
 }
 
 .footer {
-  background-color: var(--c-dblue);
-  color: var(--c-white);
-  text-align: center;
-  padding: 2% 0 2% 0;
-  width: 100%;
-}
-
-.contact-container {
   display: inline-block;
   text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: left;
+  background-color: var(--c-dblue);
+  color: var(--c-white);
+  text-align: center;
+  padding: 2% 0 2% 0;
+  width: 100%;
+
+}
+
+.contact-container {
   border-top: solid var(--c-lblue) .15px;
   border-bottom: solid var(--c-lblue) .15px;
   width: 100%;
-  padding: 2% 5% 2% 5%;
+  padding: 2% 0 2% 0;
 }
 
 /* Font awesome icons */
@@ -236,10 +240,12 @@ img {
   width: 4%;
   text-align: center;
   text-decoration: none;
+  /*opacity: .7;*/
 }
 
 .fa:hover {
-  opacity: .5;
+  /*opacity: 1;*/
+  color: var(--c-yellow);
 }
 
 /* LinkedIn */
