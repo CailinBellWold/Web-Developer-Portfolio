@@ -22,7 +22,6 @@ This exercise required building a page from scratch using the HTML and CSS skill
 5. The application images link to deployed applications. (Note: At the time this was first published, I had just one portfolio item deployed. Additional applications will be added as Boot Camp progresses.)
 5. The page responsively adapts to viewport sizing. 
 
-```
 ## Screen Shot
 
 ![My portfolio page, includign a navigation bar and sections labeled About, Work and Contact.](./assets/images/cailinbellwold.github.io_Web-Developer-Portfolio_Screenshot_V1.png) 
