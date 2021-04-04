@@ -15,7 +15,6 @@ html {
 
 /*TO DO:
 Smoosh Logo
-Center/format Contact section
 Write About Me
 Fix Responsiveness, set flex and add media-queries
 Add credits to images
@@ -30,11 +29,30 @@ body {
   flex-direction: column;
   background-color: var(--c-dblue);
   font-family: 'Poppins', sans-serif;
-  font-weight: 400;/*QUESTION: Why, when I change the font-weight, does the picture size in main/section 1 explode?*/
+  font-weight: 400;
   font-style: normal;
   letter-spacing: .5px;
   line-height: 1.6em;
   margin: 0 16.5%;
+}
+
+/*Hides H1 text from page while still including it for accessibility*/
+h1 {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute!important;
+  border: 0!important;
+  padding: 0!important;
+  margin: 0!important;
+  clip: rect(1px,1px,1px,1px);
+}
+
+img {
+  border: .5px solid var(--c-white);
+  border-radius: 2px;
 }
 
 /*Flexbox Container1 Inside of Body*/
@@ -50,11 +68,12 @@ body {
   padding: 0 0% 0% 0%;
 }
 
-header img {
+.header img {
   border: none;
 }
 
-/*Item inside Header Inside Body*/
+/*Item inside Header Inside Body
+Replaced with Logo
 h1 {
   font-size: x-large;
   color: var(--c-yellow);
@@ -65,16 +84,16 @@ h1 {
   overflow: hidden;
   text-transform: uppercase;
   min-width: 33%;
-}
-
-/*h1 span {
-  color: var(--c-lblue);
-  font-size: smaller;
 }*/
 
 h2 {
-  color: var(--c-yellow);
   font-size: 1.5em;
+  color: var(--c-yellow);
+}
+
+.h2 {
+  display: flex;
+  margin: 0 0 .3em .15em;
   min-width: 16.5%;
 }
 
@@ -99,28 +118,22 @@ nav a:hover {
   color: var(--c-white);
   border: solid .25px var(--c-yellow);
   filter: drop-shadow(3px 3px 10px var(--c-yellow));
-  /*font-size: 110%;*/
   text-transform: uppercase;
-  /*text-shadow: 1px 1px 6px var(--c--black);*/
 }
 
 /*Flexbox Container2 Inside of Body*/
 .about {
   display: flex;
   flex-direction: row;
-  width: 100%;
   /*margin: 0 5%;*/
   padding: 2% 5% 2% 5%;
-}
-
-.about h2 {
-  min-width: 16%;
+  width: 100%;
 }
 
 .about p {
   flex-basis: auto;
   line-height: 25px;
-  margin-bottom: 5px; 
+  margin-bottom: 1em ;
   color: var(--c-white);
   max-width: 780px;
   min-width: 780px;
@@ -141,19 +154,11 @@ nav a:hover {
 .projects {
   display: flex;
   justify-content: space-between;
-  width: 100%;
   color: var(--c-dblue);
   text-align: left;
   align-items: left;
   padding: 2% 5% 2% 5%;
-}
-
-.projects h2 {
-  min-width: 16%;
-}
-
-.project-container {
-/*border: solid 5px red;*/
+  width: 100%;
 }
 
 .project-container a {
@@ -181,13 +186,13 @@ nav a:hover {
   position: absolute;
   bottom: 20px;
   left: 0px;
+  font-family: 'Poppins', sans-serif;
   background-color: var(--c-yellow);
   color: var(--c-dblue);
   padding: .5em 1em;
   border-radius: 0 5px 5px 0;
   white-space: nowrap;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
 }
 
 .tile p span {
@@ -195,6 +200,7 @@ nav a:hover {
 }
 
 .tile .preview-lg {
+  flex: 1 1 780px; /*Work with this*/
   height: 350px;
   width: 780px;
 }
@@ -205,46 +211,35 @@ nav a:hover {
   margin-top: 5px;
 }
 
-img {
-  border: .5px solid var(--c-white);
-  border-radius: 2px;
-  /*border: solid 5px yellow;*/
-  /*filter: drop-shadow(5px 3px 10px var(--c-yellow));*/
-}
-
+/*Flexbox Container4 Inside of Body*/
 .footer {
   display: inline-block;
   text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: left;
-  background-color: var(--c-dblue);
   color: var(--c-white);
-  text-align: center;
   padding: 2% 0 2% 0;
   width: 100%;
-
 }
 
 .contact-container {
   border-top: solid var(--c-lblue) .15px;
   border-bottom: solid var(--c-lblue) .15px;
-  width: 100%;
   padding: 2% 0 2% 0;
+  width: 100%;
 }
 
 /* Font awesome icons */
 .fa {
-  margin: 2%;
-  font-size: 16em;
-  width: 4%;
   text-align: center;
   text-decoration: none;
-  /*opacity: .7;*/
+  font-size: 16em;
+  margin: 2%;
+  width: 4%;
 }
 
 .fa:hover {
-  /*opacity: 1;*/
   color: var(--c-yellow);
 }
 
@@ -271,3 +266,54 @@ img {
   color: var(--c-red2);
   line-height: 20px;
 }
+
+/*Works*/
+@media screen and (max-width: 1446px) {
+  body {
+    margin: 0 8%;
+  }
+}
+/*Works*/
+@media screen and (max-width: 1173px) {
+  body {
+    margin: 0 2%;
+  }
+}
+/*Works*/
+@media screen and (max-width: 1022px) {
+  body {
+    margin: 0 0%;
+  }
+}
+/*Working...how to rearrange*/
+@media screen and (max-width: 1012px) {
+  body {
+    margin: 0 2%;
+  }
+
+  .about,
+  .projects {
+    flex-direction: column;
+    padding: 2% 2% 2% 2%;
+  }
+
+  .h2, {
+    display: inline-block;
+    text-align: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: left;
+    padding: 2% 0 2% 0;
+    width: 100%;
+  }
+}
+
+/* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict
+
+320px — 480px: Mobile devices
+
+481px — 768px: iPads, Tablets
+
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV*/
